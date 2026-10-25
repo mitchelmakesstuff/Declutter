@@ -185,7 +185,7 @@ document.getElementById('sellform').addEventListener('submit', function(e){
   var text = 'Hi, I want to sell: ' + document.getElementById('f-item').value.trim() + (price ? ' (asking ' + naira(price) + ')' : '') +
     '.\nName: ' + document.getElementById('f-name').value.trim() + '\nPhone: ' + document.getElementById('f-phone').value.trim();
   var p = document.getElementById('preview'); p.textContent = text; p.style.display = 'block';
-  sendWhatsApp(text);
+  sendWhatsApp(09132806635);
 });
 
 renderChips(); renderGrid();
