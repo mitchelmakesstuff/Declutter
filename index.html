@@ -3,219 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#16140F">
-<meta name="description" content="Discover pre-loved furniture and household essentials in Abuja. Browse the catalogue and enquire directly.">
-<title>Abuja Declutter — Pre-loved home essentials</title>
+<meta name="theme-color" content="#101820">
+<meta name="description" content="Explore smartphones, tablets and accessories at Valentine Mobile. Browse the demo catalogue and enquire directly.">
+<title>Valentine Mobile — Phones & Accessories</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#191811;--paper:#fbfaf7;--stone:#efede7;--brass:#98691f;--smoke:#706d64;--line:#dedad0;--white:#fff;--green:#315b43;--radius:18px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{margin:0;background:var(--paper);color:var(--ink);font-family:Figtree,system-ui,sans-serif;line-height:1.55;padding-bottom:env(safe-area-inset-bottom,0)}
-button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:inherit}
-:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
-.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
-.announcement{background:var(--ink);color:#f5f1e8;text-align:center;padding:9px 14px;font-size:.78rem;letter-spacing:.02em}
-header{display:flex;align-items:center;gap:12px;padding:17px 0;border-bottom:1px solid var(--line)}
-.seal{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:var(--ink);color:#fff;font-family:'Bricolage Grotesque';font-weight:800;box-shadow:inset 0 0 0 3px var(--ink),inset 0 0 0 5px white;flex:none}
-.brand{font-weight:800;font-size:1rem;line-height:1.2}.brand small{display:block;color:var(--smoke);font-weight:400;font-size:.77rem;margin-top:4px}
-.header-actions{margin-left:auto;display:flex;gap:9px;align-items:center}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--ink);border-radius:999px;background:var(--ink);color:white;padding:11px 17px;font-weight:700;font-size:.88rem;text-decoration:none}
-.btn.secondary{background:transparent;color:var(--ink)}.btn.small{padding:9px 13px;font-size:.8rem}
-.hero{padding:clamp(38px,7vw,78px) 0 30px;display:grid;grid-template-columns:1.15fr .85fr;gap:35px;align-items:center}
-.eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.14em;font-weight:700;color:var(--brass);margin:0 0 14px}
-h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.05;letter-spacing:-.035em;margin:0}
-h1{font-size:clamp(2.6rem,7vw,5.3rem);max-width:10em}h2{font-size:clamp(1.8rem,4vw,2.8rem)}h3{font-size:1.12rem}
-.hero-copy{max-width:33rem;color:var(--smoke);margin:18px 0 23px;font-size:1.02rem}
-.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
-.hero-art{background:var(--stone);border-radius:28px;min-height:290px;display:grid;place-items:center;padding:25px;position:relative;overflow:hidden}
-.hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #d7d1c5;border-radius:50%;width:250px;height:250px}
-.hero-art:after{width:190px;height:190px}
-.hero-art svg{width:min(70%,270px);height:auto;position:relative;z-index:1;color:#716b5e}
-.hero-caption{position:absolute;bottom:16px;left:18px;right:18px;text-align:center;color:var(--smoke);font-size:.72rem;z-index:2}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin:26px 0 15px}.section-head p{margin:7px 0 0;color:var(--smoke);font-size:.9rem}
-.catalogue{padding:12px 0 50px}
-.toolbar{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:10px}
-.searchbox input,.toolbar select{width:100%;border:1px solid var(--line);background:white;border-radius:13px;padding:13px 15px;color:var(--ink);min-height:48px}
-.chips{display:flex;gap:8px;overflow-x:auto;padding:14px 0 10px;scrollbar-width:thin}
-.chip{white-space:nowrap;border:1px solid var(--line);background:white;border-radius:99px;padding:8px 13px;font-size:.8rem}
-.chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:white}
-.results-line{display:flex;justify-content:space-between;gap:10px;color:var(--smoke);font-size:.8rem;padding:9px 0 14px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.card{min-width:0;background:white;border:1px solid var(--line);border-radius:16px;padding:9px;display:flex;flex-direction:column}
-.product-visual{aspect-ratio:1/1;border-radius:11px;background:var(--stone);display:grid;place-items:center;position:relative;overflow:hidden;color:#716b5e}
-.product-visual svg{width:44%;height:44%;fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
-.tag{position:absolute;top:10px;left:10px;background:#fff;border-radius:99px;padding:4px 8px;font-size:.65rem;color:var(--smoke)}
-.card h3{font-family:Figtree,sans-serif;font-size:.94rem;letter-spacing:0;margin:12px 2px 4px;line-height:1.25}
-.condition{font-size:.76rem;color:var(--smoke);margin:0 2px}
-.price{font-weight:800;margin:8px 2px 11px;font-size:.95rem}
-.card .btn{width:100%;margin-top:auto;padding:10px 8px;font-size:.78rem}
-.no-results{grid-column:1/-1;text-align:center;padding:42px 15px;border:1px dashed var(--line);border-radius:16px;color:var(--smoke)}
-.how{background:var(--stone);padding:55px 0}
-.three{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:25px}
-.info-card{border-top:1px solid #d4cfc3;padding-top:17px}.number{font-size:.73rem;color:var(--brass);font-weight:800;letter-spacing:.12em}.info-card h3{margin:10px 0}.info-card p,.info-card li{color:var(--smoke);font-size:.88rem}.info-card ol{padding-left:19px;margin:8px 0}
-.seller{padding:62px 0;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
-.seller-copy p{color:var(--smoke);max-width:34rem}.seller-form{display:grid;gap:12px;background:white;border:1px solid var(--line);border-radius:18px;padding:20px}
-label{display:grid;gap:5px;font-size:.78rem;font-weight:700}input,textarea{border:1px solid var(--line);border-radius:11px;padding:12px;background:white;min-width:0}textarea{resize:vertical;min-height:80px}
-.form-note{font-size:.75rem;color:var(--smoke);margin:0}
-.trust{background:#24231d;color:#f7f4ed;padding:35px 0}.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.trust h3{font-size:1rem;margin-bottom:7px}.trust p{color:#c9c4b8;font-size:.82rem;margin:0}
-footer{padding:30px 0 40px;color:var(--smoke);font-size:.8rem}footer .footrow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer a{margin-right:14px}
-.dialog-backdrop{position:fixed;inset:0;background:#17150f9c;z-index:20;display:none;align-items:center;justify-content:center;padding:16px}
-.dialog-backdrop.open{display:flex}.dialog{background:var(--paper);border-radius:20px;width:min(520px,100%);max-height:90dvh;overflow:auto;padding:22px;position:relative}
-.dialog-close{float:right;border:1px solid var(--line);border-radius:50%;background:white;width:36px;height:36px;font-size:1.2rem}
-.dialog h2{font-size:1.8rem;margin:8px 0}.dialog p{color:var(--smoke);font-size:.9rem}
-.dialog-price{font-weight:800;font-size:1.2rem;color:var(--ink)!important}
-#toast{position:fixed;z-index:30;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0));transform:translateX(-50%);background:var(--ink);color:white;padding:12px 17px;border-radius:12px;max-width:90%;font-size:.82rem;box-shadow:0 6px 25px #0002;display:none}
-@media(max-width:700px){.hero{grid-template-columns:1fr;gap:24px}.hero-art{min-height:205px}.three,.trust-grid{grid-template-columns:1fr;gap:20px}.seller{grid-template-columns:1fr;gap:20px}.grid{gap:10px}.toolbar{grid-template-columns:1fr 130px}.wrap{width:min(100% - 28px,1120px)}}
-@media(max-width:380px){.header-actions .btn{padding:9px 11px;font-size:.75rem}.brand{font-size:.9rem}.grid{gap:8px}.card{padding:7px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+:root{--navy:#101820;--navy2:#172630;--ink:#18232b;--muted:#66747d;--paper:#f5f7f8;--white:#fff;--line:#e2e8eb;--blue:#2878f0;--cyan:#9dd9e5;--green:#137b55;--radius:20px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;line-height:1.55}button,input,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:inherit;text-decoration:none}:focus-visible{outline:3px solid #65a5ff;outline-offset:3px}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+.announcement{background:#0b1116;color:#dce7eb;text-align:center;padding:9px 12px;font-size:.76rem;letter-spacing:.025em}.announcement strong{color:#fff}
+header{height:78px;display:flex;align-items:center;gap:12px;color:#fff}.top{background:var(--navy)}.logo{width:43px;height:43px;border-radius:13px;background:linear-gradient(145deg,#4c9aff,#1762d4);display:grid;place-items:center;color:white;font:800 1.1rem Manrope;letter-spacing:-.08em;box-shadow:0 8px 20px #2878f044}.brand{font:800 1rem Manrope;letter-spacing:-.04em}.brand small{display:block;color:#aebbc2;font:500 .7rem "DM Sans";letter-spacing:0;margin-top:2px}.nav{display:flex;gap:25px;margin-left:45px;color:#c4d0d6;font-size:.84rem}.nav a:hover{color:#fff}.header-right{margin-left:auto;display:flex;gap:10px;align-items:center}.btn{border:0;border-radius:999px;padding:12px 18px;background:var(--blue);color:white;font-weight:700;font-size:.85rem;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn.dark{background:#fff;color:var(--navy)}.btn.outline{background:transparent;color:var(--ink);border:1px solid var(--line)}.btn.small{padding:10px 14px;font-size:.78rem}
+.hero{background:var(--navy);color:white;overflow:hidden;position:relative}.hero-inner{min-height:440px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:24px;padding-top:48px;padding-bottom:54px}.eyebrow{color:#70baff;text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.7rem;margin:0 0 15px}.hero h1{font:800 clamp(2.8rem,6.2vw,5.25rem)/1.02 Manrope;letter-spacing:-.075em;max-width:660px;margin:0}.hero h1 span{color:#8ac9ff}.hero-copy{color:#c1cdd3;max-width:490px;font-size:1rem;margin:20px 0 25px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}.hero-visual{height:335px;position:relative;display:grid;place-items:center}.glow{position:absolute;width:300px;height:300px;border-radius:50%;background:#2679ed42;filter:blur(40px)}.phone{position:absolute;width:145px;height:270px;border:7px solid #394a54;border-radius:29px;background:linear-gradient(150deg,#a4d9ff,#2677e9 55%,#102c62);box-shadow:0 28px 65px #0008;transform:rotate(-13deg) translateX(-58px);z-index:2}.phone:before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:48px;height:12px;border-radius:10px;background:#17232c}.phone:after{content:"";position:absolute;inset:40px 14px 20px;border-radius:18px;background:radial-gradient(circle at 60% 30%,#e1f7ff99,transparent 34%),linear-gradient(145deg,#62b8ff,#1455bd 65%,#091c4c)}.phone.back{width:135px;height:250px;transform:rotate(13deg) translateX(65px) translateY(12px);background:linear-gradient(140deg,#d9e1e7,#71828f);z-index:1;border-color:#71808a}.phone.back:after{inset:12px auto auto 12px;width:52px;height:68px;border-radius:15px;background:radial-gradient(circle at 13px 15px,#18232b 0 7px,transparent 8px),radial-gradient(circle at 38px 15px,#18232b 0 7px,transparent 8px),radial-gradient(circle at 13px 43px,#18232b 0 7px,transparent 8px),linear-gradient(140deg,#d4dde2,#8d9da6)}.float-pill{position:absolute;z-index:3;background:#fff;color:#15222b;border-radius:13px;padding:10px 14px;box-shadow:0 12px 35px #0003;font-size:.74rem;font-weight:800}.float-pill.one{top:45px;right:6px}.float-pill.two{bottom:33px;left:3px}
+.trust-strip{background:white;border-bottom:1px solid var(--line)}.trust-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:17px 0}.trust-item{display:flex;align-items:center;gap:10px;color:#52616a;font-size:.78rem}.trust-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:11px;background:#edf4ff;color:#246fd8;font-weight:800;flex:none}
+.section{padding:62px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:22px}.kicker{color:var(--blue);font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;font-weight:800;margin:0 0 9px}.section h2{font:800 clamp(1.8rem,4vw,2.7rem)/1.12 Manrope;letter-spacing:-.06em;margin:0}.sub{color:var(--muted);font-size:.9rem;margin:9px 0 0}.brands{display:grid;grid-template-columns:repeat(6,1fr);gap:11px}.brand-tile{border:1px solid var(--line);background:#fff;border-radius:15px;padding:18px 8px;text-align:center;font:800 1rem Manrope;letter-spacing:-.04em;color:#33434d}.brand-tile span{display:block;color:#87939a;font:500 .65rem "DM Sans";letter-spacing:0;margin-top:4px}
+.catalogue{padding-top:25px}.tools{display:grid;grid-template-columns:minmax(0,1fr) 170px;gap:10px;margin-bottom:14px}.search{position:relative}.search input,.tools select{width:100%;height:48px;border:1px solid var(--line);border-radius:13px;padding:0 14px;background:#fff;color:var(--ink)}.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 15px;scrollbar-width:thin}.chip{white-space:nowrap;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 13px;font-size:.78rem;color:#52616a}.chip[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:#fff}.count{font-size:.77rem;color:var(--muted);margin-bottom:13px}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.product{background:white;border:1px solid var(--line);border-radius:17px;padding:9px;display:flex;flex-direction:column;min-width:0;transition:transform .18s,box-shadow .18s}.product:hover{transform:translateY(-3px);box-shadow:0 12px 30px #1a2b3810}.product-art{height:190px;border-radius:12px;background:linear-gradient(145deg,#f0f5f8,#e5edf2);display:grid;place-items:center;position:relative;overflow:hidden}.product-art:before{content:"";position:absolute;width:170px;height:170px;border-radius:50%;background:#fff8}.device{position:relative;width:86px;height:150px;border:5px solid #34434d;border-radius:18px;background:linear-gradient(145deg,#b9e6ff,#317fe8 60%,#173b79);box-shadow:0 12px 20px #263c4b35}.device:before{content:"";position:absolute;top:5px;left:50%;transform:translateX(-50%);height:7px;width:30px;background:#26343c;border-radius:9px}.device:after{content:"";position:absolute;inset:24px 8px 10px;border-radius:10px;background:radial-gradient(circle at 60% 35%,#e9f8ff99,transparent 30%),linear-gradient(145deg,#66c2ff,#1955b4)}.device.android{border-radius:13px;width:91px;height:148px;background:linear-gradient(145deg,#e4e8eb,#6d7d87)}.device.android:after{inset:8px 8px auto;width:34px;height:45px;background:radial-gradient(circle at 10px 11px,#26333b 0 5px,transparent 6px),radial-gradient(circle at 26px 11px,#26333b 0 5px,transparent 6px),radial-gradient(circle at 10px 29px,#26333b 0 5px,transparent 6px);}.device.tablet{width:135px;height:160px;border-radius:14px;transform:rotate(-5deg)}.device.watch{width:78px;height:94px;border-radius:22px;border-width:5px}.device.watch:after{inset:12px 7px;border-radius:14px;background:linear-gradient(145deg,#172d48,#498eea)}.device.buds{width:110px;height:100px;border:0;background:transparent;box-shadow:none}.device.buds:before{top:18px;left:18px;width:26px;height:55px;background:#fff;border:3px solid #83939d;border-radius:18px;transform:rotate(-15deg)}.device.buds:after{inset:12px 12px auto auto;width:26px;height:55px;background:#fff;border:3px solid #83939d;border-radius:18px;transform:rotate(15deg)}.product-label{position:absolute;top:10px;left:10px;background:#fff;border-radius:99px;padding:5px 8px;font-size:.63rem;color:#52616a;font-weight:700}.product-info{padding:12px 3px 3px;display:flex;flex-direction:column;flex:1}.product-brand{font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:#75838b;font-weight:800}.product h3{font-size:.9rem;line-height:1.3;margin:5px 0 7px;font-weight:700}.price{font:800 1rem Manrope;letter-spacing:-.03em;margin:0 0 11px}.product .btn{width:100%;margin-top:auto;padding:10px 8px;font-size:.76rem}.empty{grid-column:1/-1;text-align:center;padding:42px 15px;background:white;border:1px dashed var(--line);border-radius:16px;color:var(--muted)}
+.promo{background:var(--navy);color:white;border-radius:24px;padding:32px;display:flex;justify-content:space-between;align-items:center;gap:20px;overflow:hidden}.promo h2{font:800 clamp(1.5rem,3.5vw,2.3rem) Manrope;letter-spacing:-.06em;margin:0}.promo p{color:#bdcbd2;margin:9px 0 0;font-size:.86rem}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:27px}.step{padding:20px;border:1px solid var(--line);background:white;border-radius:16px}.step b{color:var(--blue);font:800 .75rem Manrope;letter-spacing:.12em}.step h3{font:800 1rem Manrope;margin:12px 0 7px}.step p{font-size:.82rem;color:var(--muted);margin:0}
+.contact{background:#eaf0f4;padding:55px 0}.contact-inner{display:flex;justify-content:space-between;align-items:center;gap:25px}.contact h2{font:800 clamp(1.8rem,4vw,2.5rem) Manrope;letter-spacing:-.06em;margin:0}.contact p{color:#5d6c75;margin:10px 0 0;max-width:560px;font-size:.88rem}
+footer{background:#0b1116;color:#e7eef1;padding:35px 0 28px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot p{color:#aebbc2;font-size:.78rem;margin:7px 0}.foot-links{display:flex;gap:17px;color:#c8d2d7;font-size:.8rem}.fine{border-top:1px solid #26343d;margin-top:24px;padding-top:17px;color:#82919a;font-size:.7rem}
+.backdrop{position:fixed;inset:0;background:#071018b8;z-index:20;display:none;align-items:center;justify-content:center;padding:16px}.backdrop.open{display:flex}.modal{width:min(490px,100%);max-height:90dvh;overflow:auto;background:white;border-radius:22px;padding:23px;position:relative}.close{position:absolute;right:15px;top:15px;border:1px solid var(--line);background:white;width:36px;height:36px;border-radius:50%;font-size:1.25rem}.modal-art{height:165px;border-radius:15px;background:linear-gradient(145deg,#eff5f8,#e3edf3);display:grid;place-items:center;margin:24px 0 17px}.modal h2{font:800 1.6rem Manrope;letter-spacing:-.05em;margin:5px 42px 7px 0}.modal p{font-size:.86rem;color:var(--muted)}.modal .price{font-size:1.2rem;color:var(--ink)}.modal .btn{width:100%;margin-top:10px}
+#toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--navy);color:white;border-radius:12px;padding:12px 17px;z-index:40;display:none;max-width:90%;font-size:.8rem;box-shadow:0 8px 30px #0003}
+@media(max-width:850px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}.nav{margin-left:20px;gap:14px}.hero-inner{min-height:390px}.hero-visual{transform:scale(.9)}}@media(max-width:620px){.wrap{width:calc(100% - 28px)}header{height:68px}.nav{display:none}.hero-inner{grid-template-columns:1fr;padding-top:43px;padding-bottom:22px;gap:0}.hero h1{font-size:clamp(2.8rem,13vw,4.1rem)}.hero-visual{height:260px;margin-top:2px;transform:scale(.86)}.trust-inner{gap:7px}.trust-item{font-size:.68rem;align-items:flex-start}.trust-icon{width:29px;height:29px}.section{padding:47px 0}.brands{grid-template-columns:repeat(3,1fr);gap:8px}.brand-tile{padding:14px 5px;font-size:.9rem}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-art{height:155px}.tools{grid-template-columns:minmax(0,1fr) 125px}.steps{grid-template-columns:1fr;gap:10px}.promo,.contact-inner{align-items:flex-start;flex-direction:column}.promo{padding:25px}.header-right .btn{padding:9px 12px;font-size:.72rem}}@media(max-width:360px){.product-art{height:135px}.product h3{font-size:.82rem}.brand{font-size:.9rem}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
 <body>
-<div class="announcement">Pre-loved home essentials in Abuja · Browse, enquire and buy directly</div>
-<div class="wrap">
-<header>
- <div class="seal" aria-hidden="true">AD</div>
- <div class="brand">abujadeclutter__<small>Pre-loved household items · Abuja</small></div>
- <div class="header-actions"><a class="btn small" href="#catalogue">Browse items</a><button class="btn small" type="button" data-contact>Contact</button></div>
-</header>
+<div class="announcement">Your Abuja destination for <strong>phones, gadgets & accessories</strong></div>
+<div class="top"><div class="wrap"><header>
+ <a class="logo" href="#" aria-label="Valentine Mobile home">VM</a>
+ <a class="brand" href="#">VALENTINE MOBILE<small>Phones · Gadgets · Accessories</small></a>
+ <nav class="nav" aria-label="Main navigation"><a href="#brands">Brands</a><a href="#shop">Shop</a><a href="#how">How to order</a></nav>
+ <div class="header-right"><a class="btn dark small" href="#shop">Explore products</a></div>
+</header></div></div>
 <main>
-<section class="hero">
- <div><p class="eyebrow">A second home for good things</p><h1>Good homes deserve good finds.</h1><p class="hero-copy">Discover pre-loved furniture and household essentials. Browse the catalogue, check the details and enquire directly with the store.</p><div class="hero-actions"><a class="btn" href="#catalogue">Explore the catalogue</a><a class="btn secondary" href="#sell">Sell an item</a></div></div>
- <div class="hero-art" aria-label="Illustration of a comfortable armchair">
- <svg viewBox="0 0 260 220" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M65 108c0-19 15-34 34-34h62c19 0 34 15 34 34v54H65v-54Z" stroke="currentColor" stroke-width="5"/><path d="M54 110c-12 0-19 9-19 21v29c0 9 7 16 16 16h177c9 0 16-7 16-16v-29c0-12-7-21-19-21" stroke="currentColor" stroke-width="5"/><path d="M70 176v20m120-20v20M89 76V58c0-10 8-18 18-18h50c10 0 18 8 18 18v18" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M83 118h94" stroke="currentColor" stroke-width="3" opacity=".5"/></svg>
- <div class="hero-caption">Thoughtful finds. A little less waste.</div></div>
-</section>
-<section class="catalogue" id="catalogue">
- <div class="section-head"><div><p class="eyebrow">The collection</p><h2>Find your next favourite.</h2><p>Browse by category or search for something specific.</p></div></div>
- <div class="toolbar"><div class="searchbox"><input id="search" type="search" placeholder="Search furniture and appliances…" aria-label="Search products"></div><select id="sort" aria-label="Sort products"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="az">Name: A to Z</option></select></div>
- <div class="chips" id="chips" aria-label="Product categories"></div>
- <div class="results-line"><span id="count" aria-live="polite"></span><span>Prices shown in Nigerian naira</span></div>
- <div class="grid" id="grid"></div>
-</section>
-</main>
-</div>
-<section class="how">
- <div class="wrap"><p class="eyebrow">Simple and straightforward</p><h2>How it works</h2>
- <div class="three">
-  <article class="info-card"><span class="number">01 · BUY</span><h3>Find an item</h3><p>Browse the catalogue and open an item to review its price, condition and details.</p></article>
-  <article class="info-card"><span class="number">02 · ENQUIRE</span><h3>Talk to the store</h3><p>Send an enquiry to confirm availability, inspect the item and agree on payment.</p></article>
-  <article class="info-card"><span class="number">03 · ARRANGE</span><h3>Plan collection or delivery</h3><p>Confirm the delivery area, fee and timing with the store before paying.</p></article>
- </div>
- </div>
-</section>
-<section class="wrap seller" id="sell">
- <div class="seller-copy"><p class="eyebrow">Give good things another home</p><h2>Have something to sell?</h2><p>Send the store a few details about your item. You can share photos and discuss the listing directly after your enquiry.</p><p><strong>Helpful tip:</strong> include the brand, age, condition and any faults so the store can assess it accurately.</p></div>
- <form class="seller-form" id="seller-form">
-  <label for="seller-name">Your name<input id="seller-name" name="name" autocomplete="name" required maxlength="80" placeholder="Name"></label>
-  <label for="seller-phone">Phone number<input id="seller-phone" name="phone" type="tel" autocomplete="tel" required maxlength="30" placeholder="Your contact number"></label>
-  <label for="seller-item">What are you selling?<input id="seller-item" name="item" required maxlength="120" placeholder="e.g. 3-seater sofa"></label>
-  <label for="seller-price">Expected price (₦)<input id="seller-price" name="price" inputmode="numeric" maxlength="15" placeholder="Optional"></label>
-  <label for="seller-condition">Condition and extra details<textarea id="seller-condition" name="condition" maxlength="500" placeholder="Brand, age, condition, location…"></textarea></label>
-  <button class="btn" type="submit">Prepare seller enquiry</button>
-  <p class="form-note">Your details are placed into a WhatsApp message for you to review and send. This demo does not store submissions.</p>
- </form>
-</section>
-<section class="trust"><div class="wrap trust-grid">
- <div><h3>Check before you pay</h3><p>Confirm the item's availability, condition and final price directly with the store.</p></div>
- <div><h3>Agree delivery first</h3><p>Ask about delivery coverage, charges and timing before completing payment.</p></div>
- <div><h3>Clear communication</h3><p>Keep your order details and payment confirmation for your records.</p></div>
+<section class="hero"><div class="wrap hero-inner">
+ <div><p class="eyebrow">Smart choices start here</p><h1>Find the tech that <span>moves you.</span></h1><p class="hero-copy">Explore smartphones, tablets and everyday tech from the brands you know. Browse the catalogue and contact the store to confirm availability.</p><div class="hero-actions"><a class="btn" href="#shop">Explore catalogue <span aria-hidden="true">→</span></a><a class="btn dark" href="#brands">Shop by brand</a></div></div>
+ <div class="hero-visual" aria-label="Stylized illustration of two smartphones"><div class="glow"></div><div class="phone back"></div><div class="phone"></div><div class="float-pill one">SMARTPHONES</div><div class="float-pill two">TECH FOR EVERY DAY</div></div>
 </div></section>
-<footer><div class="wrap footrow"><div><strong>abujadeclutter__</strong><br>Pre-loved household items · Abuja</div><div><a href="#catalogue">Catalogue</a><a href="#sell">Sell with us</a><button class="btn secondary small" type="button" data-contact>Contact the store</button></div></div><div class="wrap" style="margin-top:18px">© <span id="year"></span> abujadeclutter__. Product information, availability, policies and delivery terms must be confirmed with the store.</div></footer>
-<div class="dialog-backdrop" id="product-dialog" role="presentation">
- <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
-  <button class="dialog-close" type="button" id="dialog-close" aria-label="Close details">×</button>
-  <p class="eyebrow">Item details</p><h2 id="dialog-title"></h2><p class="dialog-price" id="dialog-price"></p><p id="dialog-condition"></p><p id="dialog-description"></p><p><strong>Before ordering:</strong> please confirm that the item is still available, inspect its condition and agree delivery arrangements with the store.</p><button class="btn" id="dialog-enquire" type="button">Enquire about this item</button>
- </section>
-</div>
+<section class="trust-strip"><div class="wrap trust-inner">
+ <div class="trust-item"><span class="trust-icon">✓</span><span>Ask about product availability</span></div><div class="trust-item"><span class="trust-icon">↗</span><span>Direct store enquiries</span></div><div class="trust-item"><span class="trust-icon">⌖</span><span>Abuja store information</span></div>
+</div></section>
+<section class="section" id="brands"><div class="wrap">
+ <div class="section-head"><div><p class="kicker">Explore your favourites</p><h2>Brands in the mix.</h2><p class="sub">A multi-brand shopping experience, all in one place.</p></div></div>
+ <div class="brands"><div class="brand-tile">Apple<span>iPhone & more</span></div><div class="brand-tile">SAMSUNG<span>Galaxy range</span></div><div class="brand-tile">TECNO<span>Smartphones</span></div><div class="brand-tile">Infinix<span>Smartphones</span></div><div class="brand-tile">Xiaomi<span>Phones & gadgets</span></div><div class="brand-tile">itel<span>Everyday tech</span></div></div>
+</div></section>
+<section class="section catalogue" id="shop"><div class="wrap">
+ <div class="section-head"><div><p class="kicker">The product selection</p><h2>Find your next device.</h2><p class="sub">Search the catalogue or narrow it down by category.</p></div></div>
+ <div class="tools"><div class="search"><input id="search" type="search" placeholder="Search phones, tablets, accessories…" aria-label="Search products"></div><select id="sort" aria-label="Sort products"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="az">Name: A to Z</option></select></div>
+ <div class="chips" id="chips" aria-label="Product categories"></div><div class="count" id="count" aria-live="polite"></div><div class="products" id="products"></div>
+</div></section>
+<section class="wrap" style="padding-bottom:58px"><div class="promo"><div><p class="kicker" style="color:#8fc6ff">Need a recommendation?</p><h2>Not sure which device is right for you?</h2><p>Ask the store about options, availability and current prices.</p></div><button class="btn" type="button" data-contact>Enquire with the store →</button></div></section>
+<section class="section" id="how" style="padding-top:10px"><div class="wrap"><p class="kicker">A simple way to shop</p><h2>How to order.</h2><div class="steps">
+ <article class="step"><b>01 / DISCOVER</b><h3>Choose your product</h3><p>Browse by brand or category and open a product to see its details.</p></article>
+ <article class="step"><b>02 / CONFIRM</b><h3>Chat with the store</h3><p>Ask about stock, exact model, condition, warranty and the current selling price.</p></article>
+ <article class="step"><b>03 / COMPLETE</b><h3>Arrange your purchase</h3><p>Confirm payment, collection or delivery details directly with the store before proceeding.</p></article>
+</div></div></section>
+<section class="contact"><div class="wrap contact-inner"><div><p class="kicker">We're here to help</p><h2>Let's get you connected.</h2><p>Have a question about a phone, accessory or product recommendation? Contact Valentine Mobile directly to confirm the latest details.</p></div><button class="btn" type="button" data-contact>Contact Valentine Mobile →</button></div></section>
+</main>
+<footer><div class="wrap"><div class="foot"><div><a class="brand" href="#">VALENTINE MOBILE<small>Phones · Gadgets · Accessories</small></a><p>A multi-brand electronics storefront concept.</p></div><div class="foot-links"><a href="#brands">Brands</a><a href="#shop">Catalogue</a><a href="#how">How to order</a></div></div><div class="fine">© <span id="year"></span> Valentine Mobile concept preview. Product listings, prices, stock, warranty, delivery and contact details are demonstration placeholders until confirmed by the store.</div></div></footer>
+<div class="backdrop" id="backdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="close" id="close" type="button" aria-label="Close product details">×</button><div class="modal-art" id="modal-art"></div><p class="kicker" id="modal-brand">Product details</p><h2 id="modal-title"></h2><p class="price" id="modal-price"></p><p id="modal-desc"></p><p><strong>Demo listing:</strong> Confirm the exact model, storage, color, condition, stock, warranty and current price with the store before purchasing.</p><button class="btn" id="modal-enquire" type="button">Enquire about this product →</button></section></div>
 <div id="toast" role="status" aria-live="polite"></div>
 <script>
 /*
- * STORE SETUP — complete these before launch:
- * 1. Set WHATSAPP to the store's WhatsApp number in international format,
- *    digits only (example format: 2348012345678). Do not include + or spaces.
- * 2. Replace sample ITEMS with real inventory, prices, condition and descriptions.
- * 3. Replace sample category illustrations with real product photos if available.
- * 4. Confirm delivery areas, fees, contact details and store-approved policies.
+ * VALENTINE MOBILE DEMO SETUP
+ * - Replace WHATSAPP with the store's confirmed WhatsApp number (digits only, international format).
+ * - Replace DEMO_PRODUCTS with real store-approved products, models, prices and photos.
+ * - Confirm the store's actual brand range, location, opening hours, delivery and warranty terms.
+ * - This is a front-end concept only: no inventory sync, accounts, payments or order database.
  */
 const WHATSAPP = '';
-const CATEGORIES = [['all','All items'],['sofa','Sofas'],['bed','Beds'],['dining','Dining'],['fridge','Fridges'],['ac','Air conditioners'],['washer','Washing machines'],['tv','TVs'],['storage','Storage']];
-const ICONS = {
- sofa:'<path d="M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/><path d="M3 13a2 2 0 0 1 4 0v2h10v-2a2 2 0 0 1 4 0v5H3z"/>',
- bed:'<path d="M3 18V7M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="1.5"/>',
- dining:'<path d="M4 9h16M6 9v10M18 9v10M9 9V5h6v4"/>',
- fridge:'<rect x="6" y="3" width="12" height="18" rx="2"/><path d="M6 10h12M9 6v2M9 13v3"/>',
- ac:'<rect x="3" y="5" width="18" height="7" rx="2"/><path d="M6 15c1 1 1 2 0 3M12 15c1 1 1 2 0 3M18 15c1 1 1 2 0 3"/>',
- washer:'<rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="13" r="4"/><path d="M8 6h2"/>',
- tv:'<rect x="3" y="5" width="18" height="12" rx="2"/><path d="M9 21h6M12 17v4"/>',
- storage:'<rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M12 3v18M10 12v2M14 12v2"/>'
-};
-// All entries below are DEMONSTRATION DATA. Replace with verified store inventory before launch.
-const ITEMS = [
- {id:1,cat:'sofa',name:'L-shaped velvet sofa',condition:'Very good condition · Sample',price:450000,description:'Sample listing only. Add the real dimensions, upholstery details, age and any wear before publishing.'},
- {id:2,cat:'bed',name:'King bed, padded headboard',condition:'Good condition · Sample',price:380000,description:'Sample listing only. Confirm bed size, frame material, mattress inclusion and condition.'},
- {id:3,cat:'dining',name:'4-seater dining set',condition:'Very good condition · Sample',price:185000,description:'Sample listing only. Confirm table dimensions, chair count, materials and condition.'},
- {id:4,cat:'fridge',name:'Double-door fridge',condition:'Works perfectly · Sample',price:260000,description:'Sample listing only. Confirm brand, capacity, age, energy rating and that it has been tested.'},
- {id:5,cat:'ac',name:'1.5HP split air conditioner',condition:'Cools well · Sample',price:290000,description:'Sample listing only. Confirm brand, age, service history and whether installation is included.'},
- {id:6,cat:'washer',name:'Twin-tub washing machine',condition:'Good condition · Sample',price:95000,description:'Sample listing only. Confirm brand, capacity and that both wash and spin functions work.'},
- {id:7,cat:'tv',name:'43-inch smart TV',condition:'Very good condition · Sample',price:175000,description:'Sample listing only. Confirm brand, model, smart features, screen condition and included accessories.'},
- {id:8,cat:'storage',name:'Two-door wardrobe',condition:'Good condition · Sample',price:120000,description:'Sample listing only. Confirm dimensions, material, assembly state and any defects.'}
+const CATEGORIES=[['all','All products'],['phones','Smartphones'],['tablets','Tablets'],['wearables','Wearables'],['audio','Audio'],['accessories','Accessories']];
+const DEMO_PRODUCTS=[
+{id:1,brand:'Apple',name:'iPhone 15 Pro',cat:'phones',price:1450000,kind:'phone',desc:'Demo product. Confirm storage capacity, color, condition, included accessories and current price.'},
+{id:2,brand:'Samsung',name:'Galaxy S24 Ultra',cat:'phones',price:1680000,kind:'android',desc:'Demo product. Confirm exact model, storage, network compatibility, condition and current price.'},
+{id:3,brand:'TECNO',name:'Camon 30 Premier',cat:'phones',price:620000,kind:'android',desc:'Demo product. Confirm memory configuration, color, warranty and current price.'},
+{id:4,brand:'Infinix',name:'Note 40 Pro',cat:'phones',price:390000,kind:'android',desc:'Demo product. Confirm exact variant, storage, accessories and current price.'},
+{id:5,brand:'Xiaomi',name:'Redmi Note 13 Pro',cat:'phones',price:475000,kind:'android',desc:'Demo product. Confirm RAM/storage variant, network version and current price.'},
+{id:6,brand:'itel',name:'S24 Smartphone',cat:'phones',price:155000,kind:'android',desc:'Demo product. Confirm exact model, storage, color and current price.'},
+{id:7,brand:'Apple',name:'iPad 10th Generation',cat:'tablets',price:720000,kind:'tablet',desc:'Demo product. Confirm Wi-Fi or cellular version, storage, condition and current price.'},
+{id:8,brand:'Samsung',name:'Galaxy Tab S9 FE',cat:'tablets',price:680000,kind:'tablet',desc:'Demo product. Confirm storage, connectivity, included S Pen and current price.'},
+{id:9,brand:'Apple',name:'Apple Watch SE',cat:'wearables',price:410000,kind:'watch',desc:'Demo product. Confirm size, GPS or cellular version, compatibility and current price.'},
+{id:10,brand:'Samsung',name:'Galaxy Buds FE',cat:'audio',price:125000,kind:'buds',desc:'Demo product. Confirm color, sealed/open-box status, warranty and current price.'},
+{id:11,brand:'Xiaomi',name:'Redmi Buds 5',cat:'audio',price:65000,kind:'buds',desc:'Demo product. Confirm exact model, color and current price.'},
+{id:12,brand:'Universal',name:'Fast charging adapter',cat:'accessories',price:18000,kind:'buds',desc:'Demo product. Confirm brand, wattage, plug type and device compatibility.'}
 ];
-const $=id=>document.getElementById(id);
-const state={category:'all',query:'',sort:'featured',activeItem:null};
-const naira=value=>'₦'+Number(value).toLocaleString('en-NG');
-const escapeHTML=value=>String(value).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
-let toastTimer;
-function notify(message){$('toast').textContent=message;$('toast').style.display='block';clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').style.display='none',3600);}
-function openWhatsApp(message){
- if(!/^\d{10,15}$/.test(WHATSAPP)){notify('Store contact is not configured yet. Please use the store’s confirmed contact details.');return false;}
- const url='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(message);
- const win=window.open(url,'_blank','noopener,noreferrer');
- if(!win) location.href=url;
- return true;
-}
-function renderCategories(){
- $('chips').innerHTML=CATEGORIES.map(([id,label])=>'<button type="button" class="chip" data-category="'+id+'" aria-pressed="'+(state.category===id)+'">'+label+'</button>').join('');
-}
-function getVisibleItems(){
- let list=ITEMS.filter(item=>(state.category==='all'||item.cat===state.category)&&(!state.query||(item.name+' '+item.condition+' '+item.description).toLowerCase().includes(state.query)));
- if(state.sort==='low')list.sort((a,b)=>a.price-b.price);
- if(state.sort==='high')list.sort((a,b)=>b.price-a.price);
- if(state.sort==='az')list.sort((a,b)=>a.name.localeCompare(b.name));
- return list;
-}
-function renderProducts(){
- const list=getVisibleItems();
- $('count').textContent=list.length+' sample '+(list.length===1?'item':'items')+' shown';
- if(!list.length){$('grid').innerHTML='<div class="no-results">No matching items. Try another search or category.</div>';return;}
- $('grid').innerHTML=list.map(item=>'<article class="card"><div class="product-visual"><span class="tag">Sample listing</span><svg viewBox="0 0 24 24" aria-hidden="true">'+ICONS[item.cat]+'</svg></div><h3>'+escapeHTML(item.name)+'</h3><p class="condition">'+escapeHTML(item.condition)+'</p><p class="price">'+naira(item.price)+'</p><button type="button" class="btn" data-details="'+item.id+'">View item details</button></article>').join('');
-}
-function showDetails(id){
- const item=ITEMS.find(x=>x.id===Number(id));if(!item)return;
- state.activeItem=item;$('dialog-title').textContent=item.name;$('dialog-price').textContent=naira(item.price);$('dialog-condition').textContent=item.condition;$('dialog-description').textContent=item.description;
- $('product-dialog').classList.add('open');$('dialog-close').focus();
-}
-function closeDetails(){$('product-dialog').classList.remove('open');state.activeItem=null;}
-$('chips').addEventListener('click',event=>{const btn=event.target.closest('[data-category]');if(!btn)return;state.category=btn.dataset.category;renderCategories();renderProducts();});
-$('search').addEventListener('input',event=>{state.query=event.target.value.trim().toLowerCase();renderProducts();});
-$('sort').addEventListener('change',event=>{state.sort=event.target.value;renderProducts();});
-$('grid').addEventListener('click',event=>{const btn=event.target.closest('[data-details]');if(btn)showDetails(btn.dataset.details);});
-$('dialog-close').addEventListener('click',closeDetails);
-$('product-dialog').addEventListener('click',event=>{if(event.target===$('product-dialog'))closeDetails();});
-document.addEventListener('keydown',event=>{if(event.key==='Escape')closeDetails();});
-$('dialog-enquire').addEventListener('click',()=>{if(state.activeItem)openWhatsApp('Hello, I am interested in '+state.activeItem.name+' listed at '+naira(state.activeItem.price)+'. Is it available? Please confirm its condition and delivery options.');});
-document.querySelectorAll('[data-contact]').forEach(btn=>btn.addEventListener('click',()=>openWhatsApp('Hello, I would like to enquire about your household items in Abuja.')));
-$('seller-form').addEventListener('submit',event=>{
- event.preventDefault();
- const name=$('seller-name').value.trim(),phone=$('seller-phone').value.trim(),item=$('seller-item').value.trim(),price=$('seller-price').value.trim(),condition=$('seller-condition').value.trim();
- if(price&&!/^\d[\d,]*$/.test(price)){notify('Please enter the asking price using numbers only.');return;}
- const cleanPrice=price?Number(price.replace(/,/g,'')):null;
- if(price&&(!Number.isFinite(cleanPrice)||cleanPrice<0)){notify('Please check the asking price.');return;}
- const message='Hello, I would like to submit an item for consideration.\nItem: '+item+'\nName: '+name+'\nPhone: '+phone+(cleanPrice?'\nExpected price: '+naira(cleanPrice):'')+(condition?'\nDetails: '+condition:'')+'\nI can share photos for review.';
- openWhatsApp(message);
-});
-$('year').textContent=new Date().getFullYear();
-renderCategories();renderProducts();
+const $=id=>document.getElementById(id);const state={category:'all',query:'',sort:'featured',active:null};let toastTimer;
+const money=n=>'₦'+Number(n).toLocaleString('en-NG');
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function notify(s){$('toast').textContent=s;$('toast').style.display='block';clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').style.display='none',3800)}
+function contact(message){if(!/^\d{10,15}$/.test(WHATSAPP)){notify('Store WhatsApp is not configured in this preview yet.');return}const url='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(message);const w=window.open(url,'_blank','noopener,noreferrer');if(!w)location.href=url}
+function art(kind){return '<div class="device '+(kind==='android'?'android':kind==='tablet'?'tablet':kind==='watch'?'watch':kind==='buds'?'buds':'')+'"></div>'}
+function renderChips(){$('chips').innerHTML=CATEGORIES.map(([id,label])=>'<button class="chip" type="button" data-cat="'+id+'" aria-pressed="'+(state.category===id)+'">'+label+'</button>').join('')}
+function visible(){let a=DEMO_PRODUCTS.filter(p=>(state.category==='all'||p.cat===state.category)&&(!state.query||(p.name+' '+p.brand+' '+p.cat).toLowerCase().includes(state.query)));if(state.sort==='low')a.sort((x,y)=>x.price-y.price);if(state.sort==='high')a.sort((x,y)=>y.price-x.price);if(state.sort==='az')a.sort((x,y)=>x.name.localeCompare(y.name));return a}
+function render(){let list=visible();$('count').textContent=list.length+' demonstration '+(list.length===1?'product':'products')+' · Sample prices only';$('products').innerHTML=list.length?list.map(p=>'<article class="product"><div class="product-art"><span class="product-label">Demo item</span>'+art(p.kind)+'</div><div class="product-info"><span class="product-brand">'+esc(p.brand)+'</span><h3>'+esc(p.name)+'</h3><p class="price">'+money(p.price)+'</p><button class="btn" type="button" data-product="'+p.id+'">View details</button></div></article>').join(''):'<div class="empty">No matching products. Try a different search or category.</div>'}
+function openProduct(id){let p=DEMO_PRODUCTS.find(x=>x.id===Number(id));if(!p)return;state.active=p;$('modal-art').innerHTML=art(p.kind);$('modal-brand').textContent=p.brand+' · Demo listing';$('modal-title').textContent=p.name;$('modal-price').textContent=money(p.price);$('modal-desc').textContent=p.desc;$('backdrop').classList.add('open');$('close').focus()}
+function closeProduct(){$('backdrop').classList.remove('open');state.active=null}
+$('chips').addEventListener('click',e=>{let b=e.target.closest('[data-cat]');if(!b)return;state.category=b.dataset.cat;renderChips();render()});
+$('products').addEventListener('click',e=>{let b=e.target.closest('[data-product]');if(b)openProduct(b.dataset.product)});
+$('search').addEventListener('input',e=>{state.query=e.target.value.trim().toLowerCase();render()});
+$('sort').addEventListener('change',e=>{state.sort=e.target.value;render()});
+$('close').addEventListener('click',closeProduct);$('backdrop').addEventListener('click',e=>{if(e.target===$('backdrop'))closeProduct()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeProduct()});
+$('modal-enquire').addEventListener('click',()=>{if(state.active)contact('Hello Valentine Mobile, I would like to enquire about '+state.active.name+' ('+state.active.brand+'). Is it available? Please confirm the current price, exact model/variant, warranty and delivery options.')});
+document.querySelectorAll('[data-contact]').forEach(b=>b.addEventListener('click',()=>contact('Hello Valentine Mobile, I would like to enquire about your phones and accessories. Please share your available products and current prices.')));
+$('year').textContent=new Date().getFullYear();renderChips();render();
 </script>
 </body>
 </html>
