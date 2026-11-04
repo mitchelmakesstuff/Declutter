@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#bbdef9">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="valmobile">
+<link rel="apple-touch-icon" href="./assets/valentine-mobile-app-icon.webp">
+<link rel="manifest" href="./manifest.json">
 <meta name="description" content="Explore smartphones, tablets and accessories at Valentine Mobile. Browse the demo catalogue and enquire directly.">
 <title>Valentine Mobile — Phones & Accessories</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -172,6 +177,15 @@ document.querySelectorAll('[data-contact]').forEach(b=>b.addEventListener('click
 $('deal-form').addEventListener('submit',e=>{e.preventDefault();const want=$('deal-want').value.trim();if(!want){notify('Please describe the deal you want.');return}const name=$('deal-name').value.trim(),budget=$('deal-budget').value.trim(),extra=$('deal-extra').value.trim();const msg='Hello Valentine Mobile, I would like to request a deal.\n\nWhat I am looking for: '+want+(budget?'\n\nMy budget: '+budget:'')+(extra?'\n\nAdditional details: '+extra:'')+(name?'\n\nName: '+name:'');if(!/^\d{10,15}$/.test(WHATSAPP)){notify('The store WhatsApp number needs to be confirmed.');return}window.location.href='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(msg)});$('enquiry-close').addEventListener('click',closeEnquiry);$('enquiry-backdrop').addEventListener('click',e=>{if(e.target===$('enquiry-backdrop'))closeEnquiry()});$('enquiry-form').addEventListener('submit',e=>{e.preventDefault();continueEnquiry()});$('copy-enquiry').addEventListener('click',copyEnquiry);
 $('notification-button').addEventListener('click',()=>{const panel=$('notification-panel'),open=!panel.classList.contains('open');panel.classList.toggle('open',open);$('notification-button').setAttribute('aria-expanded',String(open))});$('notification-close').addEventListener('click',()=>{$('notification-panel').classList.remove('open');$('notification-button').setAttribute('aria-expanded','false')});document.addEventListener('click',e=>{if(!$('notification-panel').contains(e.target)&&e.target!==$('notification-button')&&!$('notification-button').contains(e.target)){$('notification-panel').classList.remove('open');$('notification-button').setAttribute('aria-expanded','false')}});$('clear-notifications').addEventListener('click',()=>{saveNotifications([]);renderNotifications()});$('enable-notifications').addEventListener('click',async()=>{if(!('Notification'in window)){notify('Browser notifications are not supported here.');return}try{const permission=await Notification.requestPermission();notify(permission==='granted'?'Preview alerts enabled in this browser.':'Browser alerts were not enabled. You can still view updates here.')}catch(e){notify('Could not request browser notification permission.')}});checkNewProducts();
 $('year').textContent=new Date().getFullYear();[...new Set(DEMO_PRODUCTS.map(p=>p.brand))].sort().forEach(name=>{let o=document.createElement('option');o.value=name;o.textContent=name;$('brand-filter').appendChild(o)});renderChips();render();renderShortlists();
+</script>
+<script>
+if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(error => {
+      console.warn('Valmobile offline support could not be registered:', error);
+    });
+  });
+}
 </script>
 </body>
 </html>
