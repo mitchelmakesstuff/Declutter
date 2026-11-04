@@ -69,10 +69,15 @@ header{min-width:0}
 .close:hover{background:#eaf4fd;transform:rotate(90deg);border-radius:50%}
 .close:active{transform:scale(.94)}
 #notification-close{width:34px;height:34px;border:1px solid #e5edf4;border-radius:11px;background:#f7fbff;color:#506071;font-size:1.2rem;line-height:1}
-.product-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto}
-.product-actions button{min-width:0;border:1px solid #e1eaf2;background:#f7fbff;color:#40546a;border-radius:12px;padding:10px 7px;font-size:.7rem;font-weight:800}
-.product-actions button[aria-pressed=true]{background:#e8f4ff;border-color:#a9cde9;color:#17202b}
-.product-actions .btn{grid-column:1/-1;width:100%;margin-top:0}
+.product-actions{display:grid;grid-template-columns:38px 38px;justify-content:end;gap:7px;margin-top:auto}
+.product-actions .icon-action{width:34px;height:34px;min-width:34px;padding:0;border:1px solid #dceaf5;background:rgba(255,255,255,.82);color:#52677c;border-radius:11px;display:inline-flex;align-items:center;justify-content:center;transition:background .18s,border-color .18s,transform .18s}
+.product-actions .icon-action svg{width:16px;height:16px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.product-actions .icon-action:hover{background:#eaf5ff;border-color:#bbdef9;transform:translateY(-1px)}
+.product-actions .icon-action[aria-pressed=true]{background:#e4f2ff;border-color:#9bc8eb;color:#172f48}
+.product-actions .icon-action[aria-pressed=true] svg{fill:#bbdef9}
+.product-actions .btn{grid-column:1/-1;width:100%;margin-top:0;background:linear-gradient(135deg,#d7ecfc,#bbdef9);color:#17283a;border:1px solid #a9cde9;box-shadow:0 5px 14px #4d77951a}
+.product-actions .btn:hover{background:linear-gradient(135deg,#c7e3f8,#a9d2f4);box-shadow:0 8px 18px #4d779526}
+@media(max-width:620px){.product-actions{grid-template-columns:34px 34px;gap:6px}.product-actions .icon-action{width:32px;height:32px;min-width:32px}}
 .shortlist-section{padding:45px 0 15px}
 .shortlist-section .products{grid-template-columns:repeat(4,minmax(0,1fr))}
 .shortlist-empty{grid-column:1/-1;padding:16px;border:1px dashed #d9e4ee;border-radius:15px;color:#778596;background:#ffffff8c;font-size:.78rem}
@@ -157,7 +162,7 @@ function visible(){let a=DEMO_PRODUCTS.filter(p=>(state.category==='all'||p.cat=
 const FAV_KEY='vm_favourites',RECENT_KEY='vm_recent_products',COMPARE_KEY='vm_compare_products';
 function ids(key){try{return JSON.parse(localStorage.getItem(key)||'[]').map(Number)}catch(e){return[]}}
 function putIds(key,a){localStorage.setItem(key,JSON.stringify(a))}
-function card(p){const fav=ids(FAV_KEY).includes(p.id),cmp=ids(COMPARE_KEY).includes(p.id);return '<article class="product"><div class="product-top"><span class="product-monogram">'+esc(p.mark)+'</span><span class="product-label">Demo item</span></div><span class="product-brand">'+esc(p.brand)+'</span><h3>'+esc(p.name)+'</h3><p class="price">'+money(p.price)+'</p><div class="product-actions"><button type="button" data-fav="'+p.id+'" aria-pressed="'+fav+'">'+(fav?'♥ Saved':'♡ Save')+'</button><button type="button" data-compare="'+p.id+'" aria-pressed="'+cmp+'">'+(cmp?'✓ Added':'＋ Compare')+'</button><button class="btn" type="button" data-product="'+p.id+'">View details</button></div></article>'}
+function card(p){const fav=ids(FAV_KEY).includes(p.id),cmp=ids(COMPARE_KEY).includes(p.id);return '<article class="product"><div class="product-top"><span class="product-monogram">'+esc(p.mark)+'</span><span class="product-label">Demo item</span></div><span class="product-brand">'+esc(p.brand)+'</span><h3>'+esc(p.name)+'</h3><p class="price">'+money(p.price)+'</p><div class="product-actions"><button class="icon-action" type="button" data-fav="'+p.id+'" aria-label="'+(fav?'Remove pin':'Pin this product')+'" title="'+(fav?'Remove pin':'Pin this product')+'" aria-pressed="'+fav+'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l-1 6 3 3v2H6v-2l3-3-1-6Z"/><path d="M12 14v7"/></svg></button><button class="icon-action" type="button" data-compare="'+p.id+'" aria-label="'+(cmp?'Remove from comparison':'Add to comparison')+'" title="'+(cmp?'Remove from comparison':'Add to comparison')+'" aria-pressed="'+cmp+'"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4H4v16h4"/><path d="M16 4h4v16h-4"/><path d="M9 8h6M9 12h6M9 16h6"/></svg></button><button class="btn" type="button" data-product="'+p.id+'">View details</button></div></article>'}
 function renderShortlists(){const fav=ids(FAV_KEY),recent=ids(RECENT_KEY),featured=[1,2,3,5];const fill=(id,a,msg)=>{$(id).innerHTML=a.length?a.map(n=>DEMO_PRODUCTS.find(p=>p.id===n)).filter(Boolean).map(card).join(''):'<div class="shortlist-empty">'+msg+'</div>'};fill('featured-products',featured,'Featured demo products will appear here.');fill('favourite-products',fav,'Tap ♡ Save on a product to add it here.');fill('recent-products',recent,'Products you open will appear here.');const c=ids(COMPARE_KEY);$('compare-status').textContent=c.length?c.map(n=>DEMO_PRODUCTS.find(p=>p.id===n)?.name).filter(Boolean).join(' · ')+' ('+c.length+'/3)':'Select up to 3 products to compare.'}
 function render(){let list=visible();$('count').textContent=list.length+' demonstration '+(list.length===1?'product':'products')+' · Sample prices only';$('products').innerHTML=list.length?list.map(card).join(''):'<div class="empty">No matching products. Try a different search or category.</div>';renderShortlists()}
 function setPageLock(){document.body.style.overflow=($('backdrop').classList.contains('open')||$('enquiry-backdrop').classList.contains('open')||$('compare-backdrop').classList.contains('open'))?'hidden':''}
