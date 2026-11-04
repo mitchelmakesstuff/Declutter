@@ -33,7 +33,32 @@ footer{background:#100f22;color:#e7eef6;padding:34px 0 26px}.foot{display:flex;j
 @media(max-width:620px){.wrap{width:calc(100% - 28px)}header{min-height:72px;height:auto;gap:9px}.logo{width:54px;height:54px;flex-basis:54px}.brand{font-size:.82rem;line-height:1.15;white-space:nowrap}.brand small{font-size:.61rem;white-space:nowrap}.nav{display:none}.hero{padding:22px 0 18px}.hero-panel{grid-template-columns:1fr;padding:31px 25px 17px;border-radius:27px;min-height:0}.hero h1{font-size:clamp(2.65rem,12vw,3.9rem)}.hero-copy p{font-size:.88rem;margin:15px 0 20px}.hero-art{min-height:190px}.orb{width:145px;height:145px}.hero-bubble.one{top:5px;right:8px}.hero-bubble.two{bottom:7px;left:4px}.trust-inner{grid-template-columns:1fr;gap:8px}.trust-item{padding:10px 13px;font-size:.73rem}.section{padding:47px 0}.brands{grid-template-columns:repeat(3,1fr);gap:8px}.brand-tile{padding:14px 5px;font-size:.88rem}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product{padding:14px;min-height:180px}.product-top{margin-bottom:19px}.tools{grid-template-columns:repeat(2,minmax(0,1fr))}.tools .search{grid-column:1/-1}.steps{grid-template-columns:1fr;gap:9px}.promo,.contact-inner{align-items:flex-start;flex-direction:column}.promo{padding:25px}.store-info-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.header-right{display:flex;align-items:center;flex:0 0 auto}.header-right .btn{padding:11px 13px;font-size:.72rem;line-height:1.1;min-height:44px;min-width:0;white-space:nowrap;flex-wrap:nowrap}.contact{padding:43px 0}.store-info-grid{grid-template-columns:1fr 1fr}.store-info-card{min-height:160px;padding:15px}}
 @media(max-width:360px){.product{padding:12px}.product h3{font-size:.87rem}.brand{font-size:.88rem}.tools{grid-template-columns:minmax(0,1fr) 112px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
-.deal-box{padding:clamp(24px,5vw,42px);border:1px solid #fff;border-radius:26px;background:rgba(255,255,255,.78);box-shadow:var(--shadow)}.deal-form{display:grid;grid-template-columns:1fr 1fr;gap:0 13px;margin-top:18px}.deal-form label{display:block;font-size:.74rem;font-weight:700;color:#4f5e70;margin:12px 0 6px}.deal-form input,.deal-form textarea{width:100%;border:1px solid #dfe8f1;border-radius:13px;background:#fbfdff;padding:12px 13px;color:var(--ink);font:500 16px "DM Sans"}.deal-form textarea{min-height:120px;resize:vertical}.deal-form .wide{grid-column:1/-1}.deal-form .btn{margin-top:16px}@media(max-width:620px){.deal-form{grid-template-columns:1fr}.deal-form .wide{grid-column:auto}}</style>
+.deal-box{padding:clamp(24px,5vw,42px);border:1px solid #fff;border-radius:26px;background:rgba(255,255,255,.78);box-shadow:var(--shadow)}.deal-form{display:grid;grid-template-columns:1fr 1fr;gap:0 13px;margin-top:18px}.deal-form label{display:block;font-size:.74rem;font-weight:700;color:#4f5e70;margin:12px 0 6px}.deal-form input,.deal-form textarea{width:100%;border:1px solid #dfe8f1;border-radius:13px;background:#fbfdff;padding:12px 13px;color:var(--ink);font:500 16px "DM Sans"}.deal-form textarea{min-height:120px;resize:vertical}.deal-form .wide{grid-column:1/-1}.deal-form .btn{margin-top:16px}@media(max-width:620px){.deal-form{grid-template-columns:1fr}.deal-form .wide{grid-column:auto}}
+/* Mobile viewport correction and accessible notification control */
+html,body{width:100%;max-width:100%;overflow-x:clip}
+body{position:relative}
+img,svg,video,canvas{max-width:100%}
+.site-head,.site-head>.wrap,main,section,.hero,.hero-panel{max-width:100%}
+header{min-width:0}
+.notify-button{display:grid;place-items:center;flex:0 0 46px;width:46px;height:46px;margin-left:0;padding:0;font-size:0}
+.notify-button svg{width:21px;height:21px;display:block;overflow:visible}
+@media(max-width:620px){
+ .site-head{width:100%;max-width:100%;overflow:visible}
+ header{width:100%;gap:10px}
+ .brand{min-width:0;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .brand small{overflow:hidden;text-overflow:ellipsis}
+ .header-right{display:none!important}
+ .notify-button{margin-left:auto;flex-basis:46px;width:46px;height:46px}
+ .notification-panel{right:0;left:auto;max-width:calc(100vw - 28px)}
+ .hero-panel{width:100%;min-width:0}
+ .hero-copy,.hero-art{min-width:0}
+}
+@media(max-width:360px){
+ .wrap{width:calc(100% - 24px)}
+ .brand{font-size:.76rem}
+ .brand small{font-size:.57rem}
+}
+</style>
 </head>
 <body>
 <div class="announcement">Valentine Mobile Ltd <strong>· Phones, gadgets & accessories</strong></div>
@@ -41,7 +66,7 @@ footer{background:#100f22;color:#e7eef6;padding:34px 0 26px}.foot{display:flex;j
  <a class="logo" href="#" aria-label="Valentine Mobile Ltd home"><img src="assets/valentine-mobile-app-icon.webp" alt="Valentine Mobile app icon"></a>
  <a class="brand" href="#">VALENTINE MOBILE LTD<small>Phones · Gadgets · Accessories</small></a>
  <nav class="nav" aria-label="Main navigation"><a href="#brands">Brands</a><a href="#shop">Shop</a><a href="#how">How to order</a><a href="#contact-details">Contact & visit</a></nav>
- <div class="header-right"><a class="btn small" href="#shop">Explore products</a></div><button class="notify-button" id="notification-button" type="button" aria-label="Notifications" aria-expanded="false">♧<span class="notify-dot" id="notification-dot" hidden></span></button><div class="notification-panel" id="notification-panel" aria-label="Notifications"><div class="notification-head"><strong>Notifications</strong><button type="button" id="notification-close" aria-label="Close notifications">×</button></div><div class="notification-list" id="notification-list"></div><div class="notification-actions"><button type="button" id="enable-notifications">Enable browser alerts</button><button type="button" id="clear-notifications">Clear alerts</button></div></div>
+ <div class="header-right"><a class="btn small" href="#shop">Explore products</a></div><button class="notify-button" id="notification-button" type="button" aria-label="Notifications" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M10 21h4"/></svg><span class="notify-dot" id="notification-dot" hidden></span></button><div class="notification-panel" id="notification-panel" aria-label="Notifications"><div class="notification-head"><strong>Notifications</strong><button type="button" id="notification-close" aria-label="Close notifications">×</button></div><div class="notification-list" id="notification-list"></div><div class="notification-actions"><button type="button" id="enable-notifications">Enable browser alerts</button><button type="button" id="clear-notifications">Clear alerts</button></div></div>
 </header></div></div>
 <main>
 <section class="hero"><div class="wrap"><div class="hero-panel">
