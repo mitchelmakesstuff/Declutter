@@ -1,0 +1,21 @@
+{
+  "id": "./",
+  "name": "valmobile",
+  "short_name": "valmobile",
+  "description": "Valentine Mobile phone and accessories catalogue.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone"],
+  "orientation": "portrait",
+  "background_color": "#f4f8fc",
+  "theme_color": "#bbdef9",
+  "icons": [
+    {
+      "src": "./assets/valentine-mobile-app-icon.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}
