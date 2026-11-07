@@ -179,7 +179,7 @@ function loadInstagramPosts(){try{const posts=JSON.parse(localStorage.getItem(IN
 function renderInstagramPosts(){const posts=loadInstagramPosts(),status=$('instagram-status'),root=$('instagram-posts');status.textContent=posts.length?'Imported posts · Preview':'Not connected';status.classList.toggle('connected',posts.length>0);if(!posts.length){root.innerHTML='<div class="instagram-empty"><span class="instagram-mark">◎</span><strong>Instagram posts will appear here.</strong><p>The store has not connected its Instagram account to this preview yet. Existing manual catalogue items remain available above.</p></div>';return}root.innerHTML=posts.map(p=>'<article class="instagram-card">'+(p.mediaUrl?'<img src="'+esc(p.mediaUrl)+'" alt="Instagram post" loading="lazy">':'')+'<div class="instagram-card-body"><div class="instagram-caption">'+esc(p.caption)+'</div><div class="instagram-meta"><span>'+esc(p.date||'Instagram post')+'</span><span>Instagram</span></div>'+(p.permalink?'<a class="instagram-link" href="'+esc(p.permalink)+'" target="_blank" rel="noopener noreferrer">View original post ↗</a>':'')+'</div></article>').join('')}
 const WHATSAPP='2347036432057';
 const CATEGORIES=[['all','All products'],['phones','Smartphones'],['tablets','Tablets'],['wearables','Wearables'],['audio','Audio'],['accessories','Accessories']];
-const DEMO_PRODUCTS=[
+let PRODUCTS=[
 {id:1,brand:'Apple',name:'iPhone 15 Pro',cat:'phones',price:1450000,mark:'',desc:'Demo product. Confirm storage capacity, color, condition, included accessories and current price.'},
 {id:2,brand:'Samsung',name:'Galaxy S24 Ultra',cat:'phones',price:1680000,mark:'S',desc:'Demo product. Confirm exact model, storage, network compatibility, condition and current price.'},
 {id:3,brand:'TECNO',name:'Camon 30 Premier',cat:'phones',price:620000,mark:'T',desc:'Demo product. Confirm memory configuration, color, warranty and current price.'},
@@ -193,6 +193,8 @@ const DEMO_PRODUCTS=[
 {id:11,brand:'Xiaomi',name:'Redmi Buds 5',cat:'audio',price:65000,mark:'mi',desc:'Demo product. Confirm exact model, color and current price.'},
 {id:12,brand:'Universal',name:'Fast charging adapter',cat:'accessories',price:18000,mark:'+',desc:'Demo product. Confirm brand, wattage, plug type and device compatibility.'}
 ];
+try{const extras=JSON.parse(localStorage.getItem('vm_manual_products_v1')||'[]');if(Array.isArray(extras))PRODUCTS.push(...extras.map((p,i)=>({...p,id:'owner-'+(p.id||i),source:'manual'})))}catch(e){}
+const DEMO_PRODUCTS=PRODUCTS;
 const $=id=>document.getElementById(id),state={category:'all',brand:'all',price:'all',query:'',sort:'featured',active:null};let toastTimer;
 const money=n=>'₦'+Number(n).toLocaleString('en-NG');
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
